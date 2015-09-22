@@ -1,0 +1,19 @@
+{
+  "default_hour": 9,
+  "default_minute": 0,
+  "encrypt": false,
+  "highlight": true,
+  "linewrap": 79,
+  "journals": {
+    "default": {
+      "encrypt": true,
+      "journal": "/Users/groky/journal.txt"
+    },
+    "dayone": {
+      "journal": "/Users/groky/Library/Mobile Documents/5U8NS4GX82~com~dayoneapp~dayone/Documents/Journal_dayone"
+    }
+  },
+  "tagsymbols": "@",
+  "timeformat": "%Y-%m-%d %H:%M",
+  "editor": ""
+}
