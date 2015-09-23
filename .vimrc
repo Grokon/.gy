@@ -113,7 +113,11 @@ set nocompatible                                        " be iMproved (Must be f
 
     set autoindent                                      " ai - включить автоотступы (копируется отступ предыдущей строки)
     set smartindent                                     " Do smart autoindenting when starting a new line
-    set copyindent                                      " Copy the structure of the existing lines indent
+    set copyindent
+
+    colorscheme zenburn
+
+    
 
 " }}}
 
