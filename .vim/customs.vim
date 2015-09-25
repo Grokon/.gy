@@ -108,7 +108,7 @@ if has("spell")
     endfunc
 
     " map spell on/off for English/Russian
-    map <F11> <Esc>:call ChangeSpiellLang()<CR>
+    map <F11> <Esc>:call ChangeSpellLang()<CR>
     " limit it to just the top 10 items
     set sps=best,10
 endif
