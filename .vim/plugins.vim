@@ -52,7 +52,8 @@
       Plug 'klen/python-mode', {'for': 'python'}      " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
       Plug 'mitsuhiko/vim-jinja', {'for': 'python'}   " Jinja support for vim
       
-      Plug 'junegunn/goyo.vim'                        "Distraction-free for jrnl
+      Plug 'junegunn/goyo.vim'                        " Distraction-free for jrnl
+      Plug 'junegunn/limelight.vim'                   " Add for Goyo
 
   " Add plugins to &runtimepath
   call plug#end()
@@ -63,6 +64,42 @@
 " ┣━┛┃  ┃ ┃┃╺┓┃┃┗┫   ┗━┓┣╸  ┃  ┃ ┃┃┗┫┃╺┓
 " ╹  ┗━╸┗━┛┗━┛╹╹ ╹   ┗━┛┗━╸ ╹  ╹ ╹╹ ╹┗━┛
 " -------------------------------------------{{{
+
+  " Goyo settings {
+    function! s:goyo_enter()
+      silent !tmux set status off
+      set noshowmode
+      set noshowcmd
+      set scrolloff=999
+      Limelight
+      " ...
+      let b:quitting = 0
+      let b:quitting_bang = 0
+      autocmd QuitPre <buffer> let b:quitting = 1
+      cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+    endfunction
+
+    function! s:goyo_leave()
+      silent !tmux set status on
+      set showmode
+      set showcmd
+      set scrolloff=5
+      Limelight!
+      " ...
+      if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+        if b:quitting_bang
+          qa!
+        else
+          qa
+        endif
+      endif
+    endfunction
+    
+    autocmd! User GoyoEnter nested call <SID>goyo_enter()
+    autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+  " }
+
 
   " syntatic http://git.io/syntastic.vim {
   " linters: (from aur) nodejs-jshint, nodejs-jsonlint, csslint, checkbashisms
