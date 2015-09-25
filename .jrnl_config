@@ -5,15 +5,15 @@
   "highlight": true,
   "linewrap": 79,
   "journals": {
-    "default": {
+    "work": {
       "encrypt": true,
-      "journal": "/Users/groky/journal.txt"
+      "journal": "~/Sync/journal.txt"
     },
-    "dayone": {
-      "journal": "/Users/groky/Library/Mobile Documents/5U8NS4GX82~com~dayoneapp~dayone/Documents/Journal_dayone"
+    "default": {
+      "journal": "~/Sync/Journal_dayone"
     }
   },
   "tagsymbols": "@",
   "timeformat": "%Y-%m-%d %H:%M",
-  "editor": ""
+  "editor": "vim -c Goyo -c startinsert"
 }

@@ -52,6 +52,8 @@
       Plug 'klen/python-mode', {'for': 'python'}      " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
       Plug 'mitsuhiko/vim-jinja', {'for': 'python'}   " Jinja support for vim
       
+      Plug 'junegunn/goyo.vim'                        "Distraction-free for jrnl
+
   " Add plugins to &runtimepath
   call plug#end()
 
